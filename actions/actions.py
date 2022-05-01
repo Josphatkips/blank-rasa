@@ -63,12 +63,22 @@ class ActionHelloWorld(Action):
             headers = {"Authorization": "Bearer "+token}
 
             response=requests.get(endpoint, json=data, headers=headers).json()
-            print(response)
-            # aList = json.loads(response)
-            # print (aList)
-            # for res in response:
-            #     for r2 in res[]:
-            #         print(r2)
+            dispatcher.utter_message(text="Order details")
+            for key, value in response.items():
+                # print(value['item_key'])
+                # print(value['title'])
+                # print(value['quantity']['value'])
+                # print(value['totals']['subtotal'])
+                # print(value['totals']['tax'])
+                # print(value['totals']['total'])
+                # print(value['featured_image'])
+                dispatcher.utter_message(text=value['title'])
+                dispatcher.utter_message(text="Subtotal: "+str(value['totals']['subtotal']))
+                dispatcher.utter_message(text="Tax: "+str(value['totals']['tax']))
+                dispatcher.utter_message(text="Total: "+str(value['totals']['total']))
+                dispatcher.utter_message(image = value['featured_image'])
+                # dispatcher.utter_message(text = "https://shop.roycetechnologies.co.ke/checkout/")
+                
 
         
             

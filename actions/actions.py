@@ -80,7 +80,8 @@ class ActionHelloWorld(Action):
                 dispatcher.utter_message(text="Tax: "+str(value['totals']['tax']))
                 dispatcher.utter_message(text="Total: "+str(value['totals']['total']))
                 dispatcher.utter_message(image = value['featured_image'])
-                # dispatcher.utter_message(text = "https://shop.roycetechnologies.co.ke/checkout/")
+                dispatcher.utter_message(text = "Click below link to checkout")
+                dispatcher.utter_message(text = "https://shop.roycetechnologies.co.ke/checkout/")
                 
 
         

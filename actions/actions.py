@@ -27,32 +27,34 @@ class ActionHelloWorld(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="Hello World!"+'alas')
+       
         data = {
             "username": tracker.get_slot('first_name'),
             "password": tracker.get_slot('last_name'),
-            # "username": 'admin@shop.roycetechnologies.co.ke',
-            # "password": "Kenya#2030!?!",
-            # "passion": "coding",
+           
         }
 
-        # print(tracker.get_slot('first_name'))
-        # print(tracker.get_slot('last_name'))
-        
-        response = requests.post(authurl, json=data)
        
-        json_response=response.json()
+        
+        # response = requests.post(authurl, json=data)
+       
+        # json_response=response.json()
        
 
-        print (json_response['success'])
+        # print (json_response['success'])
         
-        if json_response['success']==False :
+        # if json_response['success']==False :
+        if 2==3 :
+            print('yes')
             # wrong password
-            dispatcher.utter_message(text=json_response['message'])
+            # dispatcher.utter_message(text=json_response['message'])
         else:
             # right password query cart
-            token= json_response['data']['token']
-            first_name= json_response['data']['firstName']
+            # 
+            # token= json_response['data']['token']
+            token= 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2hvcC5yb3ljZXRlY2hub2xvZ2llcy5jby5rZSIsImlhdCI6MTY1MTQyNDEwNywibmJmIjoxNjUxNDI0MTA3LCJleHAiOjE2NTIwMjg5MDcsImRhdGEiOnsidXNlciI6eyJpZCI6MiwiZGV2aWNlIjoiIiwicGFzcyI6ImU5NjRlODY3ZTlkMjBiOWQwNjQxOGZkMDJhNzgyNTk3In19fQ.nus-YXBKxuNYJKSRmHoX8bq9gMYd7WN0Ec13lzbPZyM'
+            # first_name= json_response['data']['firstName']
+            first_name= 'Josphat'
 
             dispatcher.utter_message(text="Hello "+first_name+" wait a moment as I process your request.")
 
@@ -60,8 +62,13 @@ class ActionHelloWorld(Action):
             data = {"ip": "1.1.2.3"}
             headers = {"Authorization": "Bearer "+token}
 
-            response=requests.get(endpoint, data=data, headers=headers).json()
+            response=requests.get(endpoint, json=data, headers=headers).json()
             print(response)
+            # aList = json.loads(response)
+            # print (aList)
+            # for res in response:
+            #     for r2 in res[]:
+            #         print(r2)
 
         
             
@@ -70,3 +77,4 @@ class ActionHelloWorld(Action):
 
 
         return []
+# https://wordpress.org/plugins/custom-wp-rest-api/

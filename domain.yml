@@ -63,7 +63,7 @@ responses:
   utter_ask_last_name:
   - text: Your email is {first_name}, what is your Password?
   utter_submit:
-  - text: Ok. Thanks!
+  - text: Processing....
   utter_slots_values:
   - text: I will remember that your name is {first_name} {last_name}!
 

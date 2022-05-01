@@ -5,6 +5,12 @@ nlu:
   examples: |
     - ask me questions
     - I wanna know
+    - My checkout order
+    - shopping cart
+    - i forgot my checkout link
+    - give me a link
+    - login into my account
+    - my account
 - intent: greet
   examples: |
     - hey

@@ -47,4 +47,5 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_submit
-  - action: utter_slots_values
+  - action: action_search_cart
+  # - action: utter_slots_values

@@ -10,8 +10,8 @@ intents:
   - bot_challenge
   - ask_me_anything
   - request_names
-# actions:
-# - utter_greet
+actions:
+- action_search_cart
 # - utter_slots_values
 # - utter_submit
 forms:
@@ -59,9 +59,9 @@ responses:
   utter_remember:
   - text: "Yes hello world."
   utter_ask_first_name:
-  - text: What is your first name?
+  - text: What is your Email address?
   utter_ask_last_name:
-  - text: So {first_name}, what is your last name?
+  - text: Your email is {first_name}, what is your Password?
   utter_submit:
   - text: Ok. Thanks!
   utter_slots_values:

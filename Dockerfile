@@ -1,6 +1,8 @@
 # Extend the official Rasa SDK image
 FROM rasa/rasa-sdk:3.1.1
 
+
+
 # Use subdirectory as working directory
 WORKDIR /app
 
@@ -9,6 +11,7 @@ WORKDIR /app
 
 # Change back to root user to install dependencies
 USER root
+RUN pip install WooCommerce
 
 # Install extra requirements for actions code, if necessary (uncomment next line)
 # RUN pip install -r requirements-actions.txt

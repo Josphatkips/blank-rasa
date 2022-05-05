@@ -43,7 +43,7 @@ class ActionHelloWorld(Action):
         json_response=response.json()
        
 
-        print (json_response['success'])
+        # print (json_response['success'])
         
         if json_response['success']==False :
 
@@ -67,6 +67,13 @@ class ActionHelloWorld(Action):
             headers = {"Authorization": "Bearer "+token}
 
             response=requests.get(endpoint, json=data, headers=headers).json()
+            if  response=='No items in the cart.':
+                
+                dispatcher.utter_message(text="your cart is empty use the following link to order")
+                dispatcher.utter_message(text = "https://shop.roycetechnologies.co.ke/")
+                return []
+           
+
             dispatcher.utter_message(text="Order details")
             for key, value in response.items():
                 # print(value['item_key'])
@@ -104,16 +111,20 @@ class BuyProduct(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="This is purchase from action")
+        # dispatcher.utter_message(text="This is purchase from action")
         wcapi = API(
         url="https://shop.roycetechnologies.co.ke/",
         consumer_key="ck_15a2eb687f868ff4f5f0f47ce1b9a0d3b5b79450",
         consumer_secret="cs_80506487eb731aaf97b23cb2ba951a01b270c0b5",
         version="wc/v3"
         )
-        res=wcapi.get("products?search=laptop", params={"per_page": 20}).json()
+        product=tracker.get_slot('product')
+        res=wcapi.get("products?search="+product, params={"per_page": 20}).json()
         # for key, value in res.items():
         #     print(value['id'])
+       
+        if not res:
+            dispatcher.utter_message(text ='I did not find product by that name, Kindly rephrase')
         for re in res:
             # print(re['permalink'])
             

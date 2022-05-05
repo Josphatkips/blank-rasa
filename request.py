@@ -13,21 +13,22 @@ token= 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2hvcC5yb3l
             # first_name= json_response['data']['firstName']
             
 
-endpoint =mainurl+ "cocart/v2/cart/items"
+# endpoint =mainurl+ "cocart/v2/cart/items"
+endpoint =mainurl+ "/wp-json/wc/v3"
 data = {"ip": "1.1.2.3"}
 headers = {"Authorization": "Bearer "+token}
 
 response=requests.get(endpoint, json=data, headers=headers).json()
-print(type(response))
+print(response)
 
-for key, value in response.items():
-   print(value['item_key'])
-   print(value['title'])
-   print(value['quantity']['value'])
-   print(value['totals']['subtotal'])
-   print(value['totals']['tax'])
-   print(value['totals']['total'])
-   print(value['featured_image'])
+# for key, value in response.items():
+#    print(value['item_key'])
+#    print(value['title'])
+#    print(value['quantity']['value'])
+#    print(value['totals']['subtotal'])
+#    print(value['totals']['tax'])
+#    print(value['totals']['total'])
+#    print(value['featured_image'])
 #    print(key, '->', value)
 
 

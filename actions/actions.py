@@ -92,3 +92,4 @@ class ActionHelloWorld(Action):
 
         return []
 # https://wordpress.org/plugins/custom-wp-rest-api/
+# docker-compose pull && docker-compose up -d

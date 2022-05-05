@@ -28,6 +28,10 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+- story: shopping story
+  steps:
+  - intent: by_product
+  - action: utter_buy
 - story: interactive story 1
   steps:
   - intent: greet

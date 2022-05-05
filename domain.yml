@@ -10,10 +10,13 @@ intents:
   - bot_challenge
   - ask_me_anything
   - request_names
+  - by_product
 actions:
 - action_search_cart
 # - utter_slots_values
 # - utter_submit
+entities:
+- product
 forms:
   name_form:
     required_slots:
@@ -53,6 +56,8 @@ responses:
 
   utter_goodbye:
   - text: "Bye"
+  utter_buy:
+  - text: "Thanks for purchasing"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."

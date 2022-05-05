@@ -1,5 +1,6 @@
 import requests
 import smtplib 
+from woocommerce import API
 # https://example.com/wp-json/jwt-auth/v1/token
 # print ("abcd")
 # # http://localhost:81/projects/freelance/wordpress/wp-json
@@ -14,12 +15,13 @@ token= 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2hvcC5yb3l
             
 
 # endpoint =mainurl+ "cocart/v2/cart/items"
-endpoint =mainurl+ "/wp-json/wc/v3"
-data = {"ip": "1.1.2.3"}
-headers = {"Authorization": "Bearer "+token}
+# endpoint =mainurl+ "/wp-json/wc/v3"
+# data = {"ip": "1.1.2.3"}
+# headers = {"Authorization": "Bearer "+token}
 
-response=requests.get(endpoint, json=data, headers=headers).json()
-print(response)
+# response=requests.get(endpoint, json=data, headers=headers).json()
+# print(response)
+
 
 # for key, value in response.items():
 #    print(value['item_key'])
@@ -31,6 +33,17 @@ print(response)
 #    print(value['featured_image'])
 #    print(key, '->', value)
 
+wcapi = API(
+    url="https://shop.roycetechnologies.co.ke/",
+    consumer_key="ck_15a2eb687f868ff4f5f0f47ce1b9a0d3b5b79450",
+    consumer_secret="cs_80506487eb731aaf97b23cb2ba951a01b270c0b5",
+    version="wc/v3"
+)
+res=wcapi.get("products?search=laptop", params={"per_page": 20}).json()
+# for key, value in res.items():
+#     print(value['id'])
+for re in res:
+    print(re['permalink'])
 
 
 

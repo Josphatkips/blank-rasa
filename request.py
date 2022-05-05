@@ -1,5 +1,6 @@
 import requests
 import smtplib 
+import json
 from woocommerce import API
 # https://example.com/wp-json/jwt-auth/v1/token
 # print ("abcd")
@@ -43,7 +44,13 @@ res=wcapi.get("products?search=laptop", params={"per_page": 20}).json()
 # for key, value in res.items():
 #     print(value['id'])
 for re in res:
-    print(re['permalink'])
+    print(re['images'])
+    for image in re['images']:
+        print (image['src'])
+    # json_formatted_str = json.dumps(re, indent=2)
+
+    # print(json_formatted_str)
+    # print(re, indent=2)
 
 
 

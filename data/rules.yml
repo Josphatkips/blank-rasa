@@ -1,21 +1,22 @@
 version: "3.1"
 
 rules:
-# - rule: Activate form
-#   steps:
-#   - intent: ask_me_anything
-#   - action: shirt_size_form
-#   - active_loop: shirt_size_form
+- rule: Activate form
+  steps:
+  - intent: by_product
+  - action: product_form
+  - active_loop: product_form
 
-# - rule: Submit form
-#   condition:
-#   - active_loop: shirt_size_form
-#   steps:
-#   - action: shirt_size_form
-#   - active_loop: null
-#   - slot_was_set:
-#     - requested_slot: null
-#   - action: utter_remember
+- rule: Submit form
+  condition:
+  - active_loop: product_form
+  steps:
+  - action: product_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_buy
+  - action: action_buy_product
 
 - rule: Say goodbye anytime the user says goodbye
   steps:

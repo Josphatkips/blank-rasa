@@ -13,6 +13,7 @@ intents:
   - by_product
 actions:
 - action_search_cart
+- action_buy_product
 # - utter_slots_values
 # - utter_submit
 entities:
@@ -22,7 +23,19 @@ forms:
     required_slots:
       - first_name
       - last_name
+  product_form:
+    required_slots:
+      - product
+      
 slots:
+  product:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product
+
+  
   first_name:
     type: text
     influence_conversation: true
@@ -43,6 +56,8 @@ slots:
 responses:
   utter_greet:
   - text: "Hey! How are you?"
+  utter_ask_product:
+  - text: "What do you want to buy"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"

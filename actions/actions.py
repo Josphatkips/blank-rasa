@@ -9,6 +9,7 @@
 
 import json
 from typing import Any, Text, Dict, List
+from woocommerce import API
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -93,3 +94,33 @@ class ActionHelloWorld(Action):
         return []
 # https://wordpress.org/plugins/custom-wp-rest-api/
 # docker-compose pull && docker-compose up -d
+
+class BuyProduct(Action):
+
+    def name(self) -> Text:
+        return "action_buy_product"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="This is purchase from action")
+        wcapi = API(
+        url="https://shop.roycetechnologies.co.ke/",
+        consumer_key="ck_15a2eb687f868ff4f5f0f47ce1b9a0d3b5b79450",
+        consumer_secret="cs_80506487eb731aaf97b23cb2ba951a01b270c0b5",
+        version="wc/v3"
+        )
+        res=wcapi.get("products?search=laptop", params={"per_page": 20}).json()
+        # for key, value in res.items():
+        #     print(value['id'])
+        for re in res:
+            # print(re['permalink'])
+            
+            dispatcher.utter_message(text ="Purchase link " + re['permalink'])
+            dispatcher.utter_message(text =re['description'])
+
+            for image in re['images']:
+                dispatcher.utter_message(image = image['src'])
+
+            dispatcher.utter_message(text ="Purchase link " + re['permalink'])

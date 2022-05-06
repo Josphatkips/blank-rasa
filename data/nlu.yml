@@ -1,33 +1,17 @@
 version: "3.1"
-
 nlu:
-- synonym: credit
-  examples: |
-    - credit card account
-    - credit account
-
-- lookup: country
-  examples: |
-    - Afghanistan
-    - Albania
-    - Kenya
-    - Zambia
-    - Zimbabwe
-
-
 - intent: ask_me_anything
   examples: |
     - ask me questions
     - I wanna know
 - intent: by_product
   examples: |
-    - I want to buy[hp laptop](product) 
+    - I want to buy[hp laptop](product)
     - I want to order [laptop](product)
     - order [phone](product)
     - do you have [clothes](product)
     - can I order [mobile phone](product) in your shop
-    - shop [macbook](product) 
-   
+    - shop [macbook](product)
 - intent: greet
   examples: |
     - hey
@@ -43,7 +27,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -56,7 +39,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -65,7 +47,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -75,7 +56,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -92,7 +72,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -109,15 +88,17 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-    
-
+- intent: stop
+  examples: |
+    - cancel
+    - stop
+    - quit
 - intent: request_names
   examples: |
     - My checkout order
@@ -126,10 +107,26 @@ nlu:
     - give me a link
     - login into my account
     - my account
+    - checkout link
 - intent: get_started
   examples: |
     - get started
     - help me get started
     - I am new here
     - I need some helps
-
+- intent: human_operator
+  examples: |
+    - I need human operator
+    - Link me with human operator
+    - I want to talk to human operator
+- synonym: credit
+  examples: |
+    - credit card account
+    - credit account
+- lookup: country
+  examples: |
+    - Afghanistan
+    - Albania
+    - Kenya
+    - Zambia
+    - Zimbabwe

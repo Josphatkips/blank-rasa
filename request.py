@@ -1,6 +1,7 @@
 import requests
 import smtplib 
 import json
+import re
 from woocommerce import API
 # https://example.com/wp-json/jwt-auth/v1/token
 # print ("abcd")
@@ -16,12 +17,19 @@ token= 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2hvcC5yb3l
             
 
 # endpoint =mainurl+ "cocart/v2/cart/items"
-# endpoint =mainurl+ "/wp-json/wc/v3"
-# data = {"ip": "1.1.2.3"}
+endpoint =mainurl+ "wp/v2/users/?search=josphat.kips@gmail.com"
+# data = {"email": "josphat.kipse@gmail.com"}
 # headers = {"Authorization": "Bearer "+token}
 
-# response=requests.get(endpoint, json=data, headers=headers).json()
+# response=requests.get(endpoint).json()
 # print(response)
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+if(re.fullmatch(regex, 'josphat@gmail.com')):
+        print("Valid Email")
+ 
+else:
+    print("Invalid Email")
+
 
 
 # for key, value in response.items():
@@ -50,7 +58,7 @@ for re in res:
 
     json_formatted_str = json.dumps(re, indent=2)
 
-    print(json_formatted_str)
+    # print(json_formatted_str)
     # build an object
     imgs=re['images'][0]
     newobj={
@@ -74,7 +82,7 @@ message = {
                 
                 }
         }
-print(message)
+# print(message)
 
 
 

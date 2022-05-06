@@ -10,8 +10,10 @@
 import json
 from typing import Any, Text, Dict, List
 from woocommerce import API
+from rasa_sdk.types import DomainDict
+import re
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker,FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset,FollowupAction
 import requests
@@ -35,6 +37,15 @@ class ActionHelloWorld(Action):
             "password": tracker.get_slot('last_name'),
            
         }
+
+
+        dispatcher.utter_message(text = "Hello "+tracker.get_slot('last_name')+", Below is our checkout Link")
+        dispatcher.utter_message(text = "https://shop.roycetechnologies.co.ke/checkout/")
+        return []
+
+
+
+
 
        
         
@@ -160,6 +171,35 @@ class BuyProduct(Action):
         return []
 
             # dispatcher.utter_message(text ="Purchase link " + re['permalink'])
+class ValidateNameForm(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_name_form"
+
+    def validate_first_name(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `first_name` value."""
+
+        # If the name is super short, it might be wrong.
+        name = slot_value
+        regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        if(re.fullmatch(regex, slot_value)):
+                # print("Valid Email")
+                # dispatcher.utter_message(text="Enter a valid email address")
+                
+                return {"first_name": slot_value}
+        
+        else:
+            dispatcher.utter_message(text="Enter a valid email address")
+            return {"first_name": None}
+        # if len(name) == 0:
+        #     dispatcher.utter_message(text="That must've been a typo.")
+        #     return {"first_name": None}
+        # return {"first_name": name}
 
 class ActionCarousel(Action):
     def name(self) -> Text:

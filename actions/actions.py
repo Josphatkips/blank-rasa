@@ -131,7 +131,7 @@ class BuyProduct(Action):
             imgs=re['images'][0]
             newobj={
                     "title": re['name'],
-                    "subtitle": re['name'],
+                    "subtitle": re['description'],
                     "image_url": imgs['src'],
                     "buttons": [ 
                         {

@@ -53,3 +53,7 @@ stories:
   - action: utter_submit
   - action: action_search_cart
   # - action: utter_slots_values
+- story: Geeting started
+  steps:
+  - intent: get_started
+  - action: utter_get_started

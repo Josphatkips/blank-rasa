@@ -126,3 +126,9 @@ nlu:
     - give me a link
     - login into my account
     - my account
+- intent: get_started
+  examples: |
+    - get started
+    - help me get started
+    - I am new here
+    - I need some helps

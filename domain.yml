@@ -11,6 +11,7 @@ intents:
   - ask_me_anything
   - request_names
   - by_product
+  - get_started
 actions:
 - action_search_cart
 - action_buy_product
@@ -55,7 +56,7 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! How are you? What can I help you with?"
   utter_ask_product:
   - text: "What do you want to buy"
 
@@ -86,6 +87,15 @@ responses:
   - text: Processing....
   utter_slots_values:
   - text: I will remember that your name is {first_name} {last_name}!
+  utter_get_started:
+  - text: "What can I help you with"
+    buttons:
+    - title: "Shopping"
+      payload: "/by_product"
+    - title: "checkout Link"
+      payload: "/request_names"
+    - title: "other"
+      payload: "/greet"
 
 session_config:
   session_expiration_time: 60

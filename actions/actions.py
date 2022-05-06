@@ -125,13 +125,83 @@ class BuyProduct(Action):
        
         if not res:
             dispatcher.utter_message(text ='I did not find product by that name, Kindly rephrase')
+        myelements=[]
         for re in res:
             # print(re['permalink'])
+            imgs=re['images'][0]
+            newobj={
+                    "title": re['name'],
+                    "subtitle": re['name'],
+                    "image_url": imgs['src'],
+                    "buttons": [ 
+                        {
+                        "title": "Buy now",
+                        "url": re['permalink'],
+                        "type": "web_url"
+                        }
+                    ]
+                }
+            myelements.append(newobj)
             
-            dispatcher.utter_message(text ="Purchase link " + re['permalink'])
-            dispatcher.utter_message(text =re['description'])
+            # dispatcher.utter_message(text ="Purchase link " + re['permalink'])
+            # dispatcher.utter_message(text =re['description'])
 
-            for image in re['images']:
-                dispatcher.utter_message(image = image['src'])
+            # for image in re['images']:
+            #     dispatcher.utter_message(image = image['src'])
+        message = {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": myelements
+                
+                }
+        }
+        dispatcher.utter_message(attachment=message)
+        return []
 
-            dispatcher.utter_message(text ="Purchase link " + re['permalink'])
+            # dispatcher.utter_message(text ="Purchase link " + re['permalink'])
+
+class ActionCarousel(Action):
+    def name(self) -> Text:
+        return "action_buy_productc"
+    
+    def run(self, dispatcher, tracker: Tracker, domain: "DomainDict") -> List[Dict[Text, Any]]:
+        message = {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "Carousel 1",
+                        "subtitle": "$10",
+                        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqhmyBRCngkU_OKSL6gBQxCSH-cufgmZwb2w&usqp=CAU",
+                        "buttons": [ 
+                            {
+                            "title": "Happy",
+                            "payload": "Happy",
+                            "type": "postback"
+                            },
+                            {
+                            "title": "sad",
+                            "payload": "sad",
+                            "type": "postback"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Carousel 2",
+                        "subtitle": "$12",
+                        "image_url": "https://image.freepik.com/free-vector/city-illustration_23-2147514701.jpg",
+                        "buttons": [ 
+                            {
+                            "title": "Click here",
+                            "url": "https://image.freepik.com/free-vector/city-illustration_23-2147514701.jpg",
+                            "type": "web_url"
+                            }
+                        ]
+                    }
+                ]
+                }
+        }
+        dispatcher.utter_message(attachment=message)
+        return []

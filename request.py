@@ -43,14 +43,38 @@ wcapi = API(
 res=wcapi.get("products?search=laptop", params={"per_page": 20}).json()
 # for key, value in res.items():
 #     print(value['id'])
+myelements=[]
 for re in res:
-    print(re['images'])
-    for image in re['images']:
-        print (image['src'])
-    # json_formatted_str = json.dumps(re, indent=2)
+    # print(re)
+   
 
-    # print(json_formatted_str)
-    # print(re, indent=2)
+    json_formatted_str = json.dumps(re, indent=2)
+
+    print(json_formatted_str)
+    # build an object
+    imgs=re['images'][0]
+    newobj={
+            "title": re['name'],
+            "subtitle": re['name'],
+            "image_url": imgs['src'],
+            "buttons": [ 
+                {
+                "title": "Buy now",
+                "url": re['permalink'],
+                "type": "web_url"
+                }
+            ]
+        }
+    myelements.append(newobj)
+message = {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": myelements
+                
+                }
+        }
+print(message)
 
 
 

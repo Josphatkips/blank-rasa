@@ -1,0 +1,140 @@
+intent,user_input,entity_name,entity_value,action,bot_reply
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_great,i am fine,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_great,i am sod,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_great,i am fine,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_great,i am sod,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+request_names,shopping cart,,,utter_ask_first_name,What is your Email address?
+nlu_fallback,josphatkips@gmail.com,,,utter_ask_last_name,Your email is josphatkips@gmail.com, what is your First name?
+deny,Josphat,,,utter_submit,Processing....
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,i am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+mood_unhappy,I am sad,,,utter_cheer_up,Here is something to cheer you up:
+utter_did_that_help,Did that help you?
+affirm,yes,,,utter_happy,Great, carry on!
+request_names,shopping cart,,,utter_ask_first_name,What is your Email address?
+nlu_fallback,josphatkips@gmail.com,,,utter_ask_last_name,Your email is josphatkips@gmail.com, what is your First name?
+deny,Josphat,,,utter_submit,Processing....
+request_names,shopping cart,,,utter_submit,Processing....

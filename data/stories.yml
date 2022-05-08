@@ -18,6 +18,7 @@ stories:
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
+  - action: action_save_conversations
 
 - story: sad path 2
   steps:
@@ -51,6 +52,7 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_submit
+  - action: action_save_conversations
   - action: action_search_cart
   # - action: utter_slots_values
 - story: Geeting started

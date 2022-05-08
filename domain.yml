@@ -17,6 +17,7 @@ actions:
 - action_buy_product
 - action_search_cart
 - validate_name_form
+- action_save_conversations
 entities:
 - product
 forms:

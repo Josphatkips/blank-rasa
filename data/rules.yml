@@ -16,6 +16,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_buy
+  - action: action_save_conversations
   - action: action_buy_product
 
 - rule: Say goodbye anytime the user says goodbye
@@ -42,5 +43,6 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_submit
+  - action: action_save_conversations
   - action: action_search_cart
   # - action: utter_slots_values

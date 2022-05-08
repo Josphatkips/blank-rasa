@@ -245,3 +245,51 @@ class ActionCarousel(Action):
         }
         dispatcher.utter_message(attachment=message)
         return []
+
+
+
+class ActionSaveConversation(Action):
+
+    def name(self) -> Text:
+        return "action_save_conversations"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        conversation=tracker.events
+        # print(conversation)
+        import os
+        if not os.path.isfile('chats.csv'):
+            with open('chats.csv','w') as file:
+                file.write("intent,user_input,entity_name,entity_value,action,bot_reply\n")
+        if not os.path.isfile('chats.txt'):
+            with open('chats.txt','w') as file2:
+                file2.write("intent,user_input,entity_name,entity_value,action,bot_reply\n")
+        chat_data=''
+        for i in conversation:
+            if i['event'] == 'user':
+                chat_data+=i['parse_data']['intent']['name']+','+i['text']+','
+                # print('user: {}'.format(i['text']))
+                if len(i['parse_data']['entities']) > 0:
+                    chat_data+=i['parse_data']['entities'][0]['entity']+','+i['parse_data']['entities'][0]['value']+','
+                    # print('extra data:', i['parse_data']['entities'][0]['entity'], '=',
+                    #       i['parse_data']['entities'][0]['value'])
+                else:
+                    chat_data+=",,"
+            elif i['event'] == 'bot':
+                # print('Bot: {}'.format(i['text']))
+                try:
+                    chat_data+=i['metadata']['utter_action']+','+i['text']+'\n'
+                except KeyError:
+                    pass
+        else:
+            with open('chats.csv','a') as file:
+                file.write(chat_data)
+            with open('chats.txt','a') as file2:
+                file2.write(chat_data)
+
+        # dispatcher.utter_message(text="All Chats saved.")
+
+        return []
+

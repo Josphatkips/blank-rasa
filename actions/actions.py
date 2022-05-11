@@ -12,7 +12,7 @@ from typing import Any, Text, Dict, List
 from woocommerce import API
 from rasa_sdk.types import DomainDict
 import re
-
+import uuid
 from rasa_sdk import Action, Tracker,FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset,FollowupAction
@@ -267,8 +267,18 @@ class ActionSaveConversation(Action):
             with open('chats.txt','w') as file2:
                 file2.write("intent,user_input,entity_name,entity_value,action,bot_reply\n")
         chat_data=''
+        my_list = []
+        uid=uuid.uuid4()
         for i in conversation:
             if i['event'] == 'user':
+                payload = {
+                'time_stamp': i['timestamp'], 
+                'message': i['text'],
+                'sender':i['event'],
+                'uid':uid,
+                'channel':i['input_channel']
+                }
+                r = requests.get('http://localhost:8000/api/savelogs', params=payload)
                 chat_data+=i['parse_data']['intent']['name']+','+i['text']+','
                 # print('user: {}'.format(i['text']))
                 if len(i['parse_data']['entities']) > 0:
@@ -279,11 +289,23 @@ class ActionSaveConversation(Action):
                     chat_data+=",,"
             elif i['event'] == 'bot':
                 # print('Bot: {}'.format(i['text']))
+                # print('=================bot')
+                # print(i)
+                # print('=================bot')
+                payload = {
+                'time_stamp': i['timestamp'], 
+                'message': i['text'],
+                'sender':i['event'],
+                'uid':uid,
+                # 'channel':i['input_channel']
+                }
+                r = requests.get('http://localhost:8000/api/savelogs', params=payload)
                 try:
                     chat_data+=i['metadata']['utter_action']+','+i['text']+'\n'
                 except KeyError:
                     pass
         else:
+            # print(chat_data)
             with open('chats.csv','a') as file:
                 file.write(chat_data)
             with open('chats.txt','a') as file2:

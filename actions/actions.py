@@ -278,7 +278,7 @@ class ActionSaveConversation(Action):
                 'uid':uid,
                 'channel':i['input_channel']
                 }
-                r = requests.get('http://localhost:8000/api/savelogs', params=payload)
+                r = requests.get('http://78.46.187.52/rasa-laravel-logg/public/index.php/api/savelogs', params=payload)
                 chat_data+=i['parse_data']['intent']['name']+','+i['text']+','
                 # print('user: {}'.format(i['text']))
                 if len(i['parse_data']['entities']) > 0:
@@ -299,7 +299,7 @@ class ActionSaveConversation(Action):
                 'uid':uid,
                 # 'channel':i['input_channel']
                 }
-                r = requests.get('http://localhost:8000/api/savelogs', params=payload)
+                r = requests.get('http://78.46.187.52/rasa-laravel-logg/public/index.php/api/savelogs', params=payload)
                 try:
                     chat_data+=i['metadata']['utter_action']+','+i['text']+'\n'
                 except KeyError:

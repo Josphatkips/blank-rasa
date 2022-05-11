@@ -8,6 +8,7 @@ stories:
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
+  - action: action_save_conversations
 
 - story: sad path 1
   steps:
@@ -29,6 +30,7 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+  - action: action_save_conversations
 # - story: shopping story
 #   steps:
 #   - intent: by_product
@@ -52,8 +54,9 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_submit
-  - action: action_save_conversations
+  # - action: action_save_conversations
   - action: action_search_cart
+  - action: action_save_conversations
   # - action: utter_slots_values
 - story: Geeting started
   steps:
@@ -64,6 +67,7 @@ stories:
   - intent: human_operator
   - action: utter_human_operator
   - action: utter_human_link
+  - action: action_save_conversations
 
 - story: User interrupts the form and doesn't want to continue
   steps:

@@ -153,3 +153,13 @@ by_product,/by_product,,,utter_ask_product,What do you want to buy
 by_product,laptop,product,laptop,utter_buy,Thanks for purchasing
 by_product,order laptop,product,laptop,utter_buy,Thanks for purchasing
 by_product,buy laptop,product,laptop,utter_buy,Thanks for purchasing
+greet,hi,,,utter_greet,Hey! How are you? What can I help you with?
+get_started,get started,,,utter_get_started,What can I help you with
+by_product,/by_product,,,utter_ask_product,What do you want to buy
+by_product,laptop,product,laptop,utter_buy,Thanks for purchasing
+by_product,order laptop,product,laptop,utter_buy,Thanks for purchasing
+by_product,buy laptop,product,laptop,utter_buy,Thanks for purchasing
+get_started,get started,,,utter_get_started,What can I help you with
+request_names,/request_names,,,utter_ask_first_name,What is your Email address?
+affirm,jj@h.com,,,utter_ask_last_name,Your email is jj@h.com, what is your First name?
+deny,n,,,utter_submit,Processing....
